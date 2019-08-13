@@ -1,5 +1,7 @@
 # SheetBest Templates
 
+[![Build Status](https://travis-ci.org/0soft/sheet-best-templates.svg?branch=master)](https://travis-ci.org/0soft/sheet-best-templates)
+
 Connect SpreadSheets to your HTML
 
 With SheetBest Templates you'll be able to:
