@@ -1,47 +1,45 @@
 const SheetBest = {};
 
-SheetBest.input = (element) => {
-  var url = element.getAttribute("data-sheet-best");
+SheetBest.input = () => {
   // TODO
-}
+  // const url = element.getAttribute('data-sheet-best');
+};
 
 SheetBest.output = (element) => {
   // Extract some data, from the element
-  var url = element.getAttribute("data-sheet-best");
-  var text = element.innerHTML;
-  element.innerHTML = "";
+  const url = element.getAttribute('data-sheet-best');
+  const text = element.innerHTML;
+  element.innerHTML = '';
 
-  fetch(url).then(r => r.json()).then(data => {
-    var replacement = data.map(object => {
+  fetch(url).then((r) => r.json()).then((data) => {
+    const replacement = data.map((object) => {
       // Trim all attributes on the object
-      Object.keys(object).forEach(k => {
+      Object.keys(object).forEach((k) => {
         object[k.trim()] = object[k];
-      })
+      });
 
       // Replace the text
-      return text.replace(/{{([^{}]*)}}/g, (match, key) => {
-        return object[key.trim()];
-      })
+      return text.replace(/{{([^{}]*)}}/g, (match, key) => object[key.trim()]);
     });
 
     // Re-add it to the HTML
-    element.innerHTML = replacement.join("");
+    element.innerHTML = replacement.join('');
   });
-}
+};
 
 SheetBest.setup = () => {
   // Run all the necessary scripts for all [data-sheet-best]
-  var elements = document.querySelectorAll("[data-sheet-best]");
-  for (var i = 0; i < elements.length; i++) {
-    var element = elements[i];
-    if (element.tagName === "FORM") {
-      input(element);
+  const elements = document.querySelectorAll('[data-sheet-best]');
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    if (element.tagName === 'FORM') {
+      SheetBest.input(element);
     } else {
-      output(element);
+      SheetBest.output(element);
     }
   }
-}
+};
 
-document.addEventListener("DOMContentLoaded", setup);
+document.addEventListener('DOMContentLoaded', SheetBest.setup);
 
 module.exports = SheetBest;

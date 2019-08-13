@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-debug": "webpack --mode development --devtool inline-source-map",
-    "build": "npm run build-debug && webpack --mode production --output-filename sheet-best-templates.min.js"
+    "build": "npm run build-debug && webpack --mode production --output-filename sheet-best-templates.min.js",
+    "test": "eslint index.js"
   },
   "author": "",
   "license": "MIT",
@@ -13,6 +14,9 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
   }
