@@ -1,7 +1,7 @@
 {
   "name": "sheet-best-templates",
   "version": "0.0.0",
-  "description": "",
+  "description": "Connect SpreadSheets to your HTML",
   "main": "index.js",
   "scripts": {
     "build-debug": "webpack --mode development --devtool inline-source-map",
@@ -9,7 +9,19 @@
     "start": "webpack --watch",
     "test": "eslint index.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0soft/sheet-best-templates.git"
+  },
+  "author": "0soft",
+  "bugs": {
+    "url": "https://github.com/0soft/sheet-best-templates/issues"
+  },
+  "keywords": [
+    "template",
+    "html",
+    "spreadsheet"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -20,5 +32,12 @@
     "eslint-plugin-import": "^2.18.2",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Nihey Takizawa",
+      "email": "nihey.takizawa@gmail.com",
+      "url": "https://github.com/nihey"
+    }
+  ]
 }
