@@ -68,17 +68,20 @@ SheetBest.output = async (element) => {
   element.innerHTML = replacement.join('');
 };
 
-SheetBest.setup = () => {
+SheetBest.setup = async () => {
   // Run all the necessary scripts for all [data-sheet-best]
   const elements = document.querySelectorAll('[data-sheet-best]');
+  const promises = [];
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     if (element.tagName === 'FORM') {
       SheetBest.input(element);
     } else {
-      SheetBest.output(element);
+      promises.push(SheetBest.output(element));
     }
   }
+
+  return Promise.all(promises);
 };
 
 document.addEventListener('DOMContentLoaded', SheetBest.setup);

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reading a SpreadSheet and turning a template into formatted HTML 1`] = `
+"<div data-sheet-best=\\"https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf\\">
+  <div>
+    XXX
+  </div>
+
+  <div>
+    YYY
+  </div>
+
+  <div>
+    ZZZ
+  </div>
+
+  <div>
+    FOO
+  </div>
+
+  <div>
+    BAR
+  </div>
+
+  <div>
+    BAZ
+  </div>
+</div>"
+`;
