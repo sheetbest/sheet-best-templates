@@ -5,54 +5,54 @@ exports[`Reading a SpreadSheet and turning a template into formatted HTML 1`] = 
   <div>
     <h2>COST</h2>
     <div>
-      <span>Price: <b>273.59</b></span>
+      <span>Price: <b>268.15</b></span>
       <span>High: <b>275.36</b></span>
-      <span>Low: <b>272.76</b></span>
+      <span>Low: <b>268</b></span>
     </div>
   </div>
 
   <div>
     <h2>AAPL</h2>
     <div>
-      <span>Price: <b>205.22</b></span>
+      <span>Price: <b>202.74</b></span>
       <span>High: <b>206.44</b></span>
-      <span>Low: <b>202.7</b></span>
+      <span>Low: <b>202.59</b></span>
     </div>
   </div>
 
   <div>
     <h2>ADBE</h2>
     <div>
-      <span>Price: <b>286.59</b></span>
+      <span>Price: <b>283.66</b></span>
       <span>High: <b>289.65</b></span>
-      <span>Low: <b>286</b></span>
+      <span>Low: <b>281.43</b></span>
     </div>
   </div>
 
   <div>
     <h2>AMZN</h2>
     <div>
-      <span>Price: <b>1779.99</b></span>
+      <span>Price: <b>1762.96</b></span>
       <span>High: <b>1795.65</b></span>
-      <span>Low: <b>1774.61</b></span>
+      <span>Low: <b>1757.22</b></span>
     </div>
   </div>
 
   <div>
     <h2>PEP</h2>
     <div>
-      <span>Price: <b>129.8</b></span>
-      <span>High: <b>130.39</b></span>
-      <span>Low: <b>129.18</b></span>
+      <span>Price: <b>129.12</b></span>
+      <span>High: <b>130.53</b></span>
+      <span>Low: <b>128.8</b></span>
     </div>
   </div>
 
   <div>
     <h2>TSLA</h2>
     <div>
-      <span>Price: <b>229.31</b></span>
+      <span>Price: <b>219.62</b></span>
       <span>High: <b>231.5</b></span>
-      <span>Low: <b>228.03</b></span>
+      <span>Low: <b>219.5</b></span>
     </div>
   </div>
 </div>"
