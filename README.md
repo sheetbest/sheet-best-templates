@@ -89,7 +89,7 @@ tag. If your spreadsheet is setup like this:
 ```
 
 We will automatically add the information on your SpreadSheet once the user
-submits the content.
+submits the content:
 
 <img src="https://raw.githubusercontent.com/0soft/sheet-best-templates/master/assets/images/write-example.png" />
 

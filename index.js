@@ -53,7 +53,12 @@ SheetBest.output = async (element) => {
   const text = element.innerHTML;
   element.innerHTML = '';
 
-  const data = await fetch(url).then((r) => r.json());
+  let data = await fetch(url).then((r) => r.json());
+
+  if (!Array.isArray(data)) {
+    data = [data];
+  }
+
   const replacement = data.map((object) => {
     // Trim all attributes on the object
     Object.keys(object).forEach((k) => {
