@@ -1,6 +1,7 @@
 # SheetBest Templates
 
 [![Build Status](https://travis-ci.org/0soft/sheet-best-templates.svg?branch=master)](https://travis-ci.org/0soft/sheet-best-templates)
+[![Coverage Status](https://coveralls.io/repos/github/0soft/sheet-best-templates/badge.svg?branch=master)](https://coveralls.io/github/0soft/sheet-best-templates?branch=master)
 
 Connect SpreadSheets to your HTML
 

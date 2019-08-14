@@ -6,6 +6,7 @@
   "scripts": {
     "build-debug": "webpack --mode development --devtool inline-source-map",
     "build": "npm run build-debug && webpack --mode production --output-filename sheet-best-templates.min.js",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | ./node_modules/coveralls/bin/coveralls.js",
     "start": "webpack --watch",
     "test": "eslint index.js"
   },
@@ -27,6 +28,7 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
+    "coveralls": "^3.0.6",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",

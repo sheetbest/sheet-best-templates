@@ -4,6 +4,8 @@ const SheeBest = require('./index');
 const sleep = (seconds) => new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 
 test('Reading a SpreadSheet and turning a template into formatted HTML', async (done) => {
+  jest.setTimeout(30000);
+
   document.body.innerHTML = `
 <div data-sheet-best="https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf">
   <div>
