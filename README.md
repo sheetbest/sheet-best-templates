@@ -12,10 +12,15 @@ With SheetBest Templates you'll be able to:
 
 ## Usage
 
+This project requires you to setup a Google Sheet API at [SheetBest](https://sheet.best).
+When you get yours get back here (it looks like this: https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf).
+We will use it on the next steps.
+
+
 Add this snippet to your HTML page:
 
 ```html
-<script src="https://raw.githubusercontent.com/0soft/sheet-best-templates/master/dist/sheet-best-templates.min.js"></script>
+<script src="https://sbt.0soft.dev/sheet-best-templates.min.js"></script>
 ```
 
 Then follow the instructions on for the operation that you want to do:
