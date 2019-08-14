@@ -9,7 +9,12 @@ test('Reading a SpreadSheet and turning a template into formatted HTML', async (
   document.body.innerHTML = `
 <div data-sheet-best="https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf">
   <div>
-    {{ code }}
+    <h2>{{ code }}</h2>
+    <div>
+      <span>Price: <b>{{ price }}</b></span>
+      <span>High: <b>{{ high }}</b></span>
+      <span>Low: <b>{{ low }}</b></span>
+    </div>
   </div>
 </div>
 `.trim();
