@@ -19,4 +19,4 @@ deploy:
     secure: IYV+qFQqMH9r6h+cCVkatLC8Cengb3ketdsu8WMqh0DGX054QIFlWLE2YhrXi1MN8xBE4+EFyiH/m+wIPAU5rD7DA5EJSJx3UuMnIbxWF1KGrqaDUX89b8+Ik8KwQryEmdyMUxtHTH5Uek6EMjqeYFrmBiSLdC+/8PW9dtULExwu77BKKs4Lu6XY7yqhMtNrUpgXwUaQuTBgilTsuQ2dMfM6+SZ/stP/PSNGORkN1eL/6TcZbf5lLaTKRTSZRbl8mSeqdf7q4yTMZztGqsPCHQfdl1MTPKxjF+2iL4Xpog2Ee0v127aDqRFGo2xqBctzKNNO15XCQWSmILdQjbE1xp2EKhvwEPDd7g2sphc2L5E7KMU1UuwR2bK910macQ1zhAebqB6ocBOkkD5f362Il1n/ZwUrUN3D9HgDA21EFx+VdBdo3cIYaWOSMrWpxMkzvits06XBuvIiYrKb0qA2vxEkO565d0sK/L4IkDwKf3/98YzU2mSPh+yXHqG0cRS5sWYGr6doJGNXenIb0b91GkJZq+PlT90KZ9esyNSWvTQDYEwGpLwaXN05MpbCjCYyzQxgFyYkFsPk2njWybMjMxWVQ/a3A52+1CQYy7xKWo/3NeKcyoGlDo9ZG7HYXNo9zrzp8gqB+1jB/u/22j58GVjEcqsSQQYv5C9pQhl0MtA=
   on:
     tags: true
-    repo: 0soft/sheet-best-templates
+    repo: sheetbest/sheet-best-templates

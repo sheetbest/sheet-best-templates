@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0soft/sheet-best-templates.git"
+    "url": "git+https://github.com/sheetbest/sheet-best-templates.git"
   },
-  "author": "0soft",
+  "author": "Sheet.Best",
   "bugs": {
-    "url": "https://github.com/0soft/sheet-best-templates/issues"
+    "url": "https://github.com/sheetbest/sheet-best-templates/issues"
   },
   "keywords": [
     "template",
@@ -42,6 +42,11 @@
       "name": "Nihey Takizawa",
       "email": "nihey.takizawa@gmail.com",
       "url": "https://github.com/nihey"
+    },
+    {
+      "name": "Sheet Best Team",
+      "email": "hello@sheet.best",
+      "url": "https://sheet.best"
     }
   ]
 }

@@ -1,7 +1,7 @@
 # SheetBest Templates
 
-[![Build Status](https://travis-ci.org/0soft/sheet-best-templates.svg?branch=master)](https://travis-ci.org/0soft/sheet-best-templates)
-[![Coverage Status](https://coveralls.io/repos/github/0soft/sheet-best-templates/badge.svg?branch=master)](https://coveralls.io/github/0soft/sheet-best-templates?branch=master)
+[![Build Status](https://travis-ci.org/sheetbest/sheet-best-templates.svg?branch=master)](https://travis-ci.org/sheetbest/sheet-best-templates)
+[![Coverage Status](https://coveralls.io/repos/github/sheetbest/sheet-best-templates/badge.svg?branch=master)](https://coveralls.io/github/sheetbest/sheet-best-templates?branch=master)
 
 Connect Google Sheets to your HTML
 
@@ -20,7 +20,7 @@ We will use it on the next steps.
 Add this snippet to your HTML page:
 
 ```html
-<script src="https://sbt.0soft.dev/sheet-best-templates.min.js"></script>
+<script src="https://cdn.sheet.best/sheet-best-templates.min.js"></script>
 ```
 
 Then follow the instructions on for the operation that you want to do:
@@ -52,7 +52,7 @@ by the content on your SpreadSheet API
 
 A Google Sheet like this:
 
-<img src="https://raw.githubusercontent.com/0soft/sheet-best-templates/master/assets/images/read-example.png" />
+<img src="https://raw.githubusercontent.com/sheetbest/sheet-best-templates/master/assets/images/read-example.png" />
 
 Will generate a HTML code like this:
 
@@ -96,7 +96,7 @@ tag. If your spreadsheet is setup like this:
 We will automatically add the information on your SpreadSheet once the user
 submits the content:
 
-<img src="https://raw.githubusercontent.com/0soft/sheet-best-templates/master/assets/images/write-example.png" />
+<img src="https://raw.githubusercontent.com/sheetbest/sheet-best-templates/master/assets/images/write-example.png" />
 
 ## License
 
