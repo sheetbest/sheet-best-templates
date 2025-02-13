@@ -1,7 +1,6 @@
 const SheetBest = {};
 
 SheetBest.input = (form) => {
-  // XXX: Not yet tested
   const url = form.getAttribute('data-sheet-best');
 
   const setEnabled = (enabled) => {
@@ -15,7 +14,6 @@ SheetBest.input = (form) => {
       }
     }
   };
-
 
   form.addEventListener('submit', async (e) => {
     setEnabled(false);
@@ -48,35 +46,38 @@ SheetBest.input = (form) => {
 };
 
 SheetBest.output = async (element) => {
-  // Extract some data, from the element
   const url = element.getAttribute('data-sheet-best');
   const text = element.innerHTML;
   element.innerHTML = '';
 
-  let data = await fetch(url).then((r) => r.json());
+  let data = await fetch(url).then((r) => {
+    if (!r.ok) {
+      element.dispatchEvent(new CustomEvent('sheetbest-load-failed', { detail: { status: r.status } }));
+      return [];
+    }
+
+    return r.json();
+  });
 
   if (!Array.isArray(data)) {
     data = [data];
   }
 
   const replacement = data.map((object) => {
-    // Trim all attributes on the object
     Object.keys(object).forEach((k) => {
       object[k.trim()] = object[k];
     });
 
-    // Replace the text
-    return text.replace(/{{([^{}]*)}}/g, (match, key) => object[key.trim()]);
+    return text.replace(/{{([^{}]*)}}/g, (_match, key) => object[key.trim()]);
   });
 
-  // Re-add it to the HTML
   element.innerHTML = replacement.join('');
 };
 
 SheetBest.setup = async () => {
-  // Run all the necessary scripts for all [data-sheet-best]
   const elements = document.querySelectorAll('[data-sheet-best]');
   const promises = [];
+
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     if (element.tagName === 'FORM') {
@@ -86,7 +87,9 @@ SheetBest.setup = async () => {
     }
   }
 
-  return Promise.all(promises);
+  await Promise.all(promises);
+
+  document.dispatchEvent(new Event('sheetbest-load-complete'));
 };
 
 document.addEventListener('DOMContentLoaded', SheetBest.setup);
