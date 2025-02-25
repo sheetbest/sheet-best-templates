@@ -1,18 +1,18 @@
-# SheetBest Templates
+# Sheet Best Javascript Template Library
 
 [![Build Status](https://travis-ci.org/sheetbest/sheet-best-templates.svg?branch=master)](https://travis-ci.org/sheetbest/sheet-best-templates)
 [![Coverage Status](https://coveralls.io/repos/github/sheetbest/sheet-best-templates/badge.svg?branch=master)](https://coveralls.io/github/sheetbest/sheet-best-templates?branch=master)
 
-Connect Google Sheets to your HTML
+Connect Google Sheets to your HTML, through a REST API powered by [Sheet Best](https://sheetbest.com).
 
-With SheetBest Templates you'll be able to:
+With the Sheet Best JS Template Library you'll be able to:
 
 -  Use SpreadSheet data to display data on your HTML template
 -  Insert data from a HTML `<form>` to a SpreadSheet
 
 ## Usage
 
-This project requires you to setup a Google Sheet API at [SheetBest](https://sheet.best).
+This project requires you to setup a Google Sheet API at [Sheet Best](https://sheetbest.com).
 When you get yours get back here (it looks like this: https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf).
 We will use it on the next steps.
 
