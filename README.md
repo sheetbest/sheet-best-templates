@@ -1,7 +1,6 @@
 # Sheet Best Javascript Template Library
 
 [![Build Status](https://travis-ci.org/sheetbest/sheet-best-templates.svg?branch=master)](https://travis-ci.org/sheetbest/sheet-best-templates)
-[![Coverage Status](https://coveralls.io/repos/github/sheetbest/sheet-best-templates/badge.svg?branch=master)](https://coveralls.io/github/sheetbest/sheet-best-templates?branch=master)
 
 Connect Google Sheets to your HTML, through a REST API powered by [Sheet Best](https://sheetbest.com).
 

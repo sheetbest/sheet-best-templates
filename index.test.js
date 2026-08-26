@@ -1,10 +1,29 @@
-global.fetch = require('isomorphic-fetch');
-const SheeBest = require('./index');
+const SheetBest = require('./index');
 
-const sleep = (seconds) => new Promise((resolve) => setTimeout(resolve, seconds * 1000));
-
-test('Reading a SpreadSheet and turning a template into formatted HTML', async (done) => {
-  jest.setTimeout(30000);
+test('Reading a SpreadSheet and turning a template into formatted HTML', async () => {
+  global.fetch = jest.fn(async () => ({
+    ok: true,
+    json: async () => [
+      {
+        code: 'COST', price: 268.15, high: 275.36, low: 268,
+      },
+      {
+        code: 'AAPL', price: 202.74, high: 206.44, low: 202.59,
+      },
+      {
+        code: 'ADBE', price: 283.66, high: 289.65, low: 281.43,
+      },
+      {
+        code: 'AMZN', price: 1762.96, high: 1795.65, low: 1757.22,
+      },
+      {
+        code: 'PEP', price: 129.12, high: 130.53, low: 128.8,
+      },
+      {
+        code: 'TSLA', price: 219.62, high: 231.5, low: 219.5,
+      },
+    ],
+  }));
 
   document.body.innerHTML = `
 <div data-sheet-best="https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf">
@@ -19,38 +38,54 @@ test('Reading a SpreadSheet and turning a template into formatted HTML', async (
 </div>
 `.trim();
 
-  await SheeBest.setup();
-  expect(document.body.innerHTML).toMatchSnapshot();
+  await SheetBest.setup();
 
-  done();
+  expect(global.fetch).toHaveBeenCalledWith(
+    'https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf',
+  );
+  expect(document.body.innerHTML).toMatchSnapshot();
 });
 
-test('Writing data to a SpreadSheet', async (done) => {
-  global.fetch = jest.fn(() => Promise.resolve({
-    json: () => ({}),
+test('Writing data to a SpreadSheet', async () => {
+  global.fetch = jest.fn(async () => ({
+    json: async () => ({}),
   }));
-  global.FormData = jest.fn(() => () => ({}));
-  Array.from = jest.fn(() => [
-    ['code', 'FOOO'], ['price', '2000'], ['volume', '10000000'],
-  ]);
 
   document.body.innerHTML = `
 <form id="form" data-sheet-best="https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf">
-  <input type="text" name="code"/>
-  <input type="text" name="price"/>
-  <input type="text" name="volume"/>
+  <input type="text" name="code" value="FOOO"/>
+  <input type="text" name="price" value="2000"/>
+  <input type="text" name="volume" value="10000000"/>
   <button id="submit-button" type="submit">submit</button>
 </form>
 `.trim();
 
-  await SheeBest.setup();
+  await SheetBest.setup();
 
+  const form = document.getElementById('form');
   const button = document.getElementById('submit-button');
+  const finished = new Promise((resolve) => {
+    form.addEventListener('submit-finished', resolve, { once: true });
+  });
+
   button.click();
 
-  await sleep(1.4);
+  await finished;
 
-  expect(fetch).toHaveBeenCalledTimes(1);
-
-  done();
+  expect(global.fetch).toHaveBeenCalledTimes(1);
+  expect(global.fetch).toHaveBeenCalledWith(
+    'https://sheet.best/api/sheet/cf969697-682a-40e3-bad4-d54803eeeacf',
+    {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify([{
+        code: 'FOOO',
+        price: '2000',
+        volume: '10000000',
+      }]),
+    },
+  );
 });
